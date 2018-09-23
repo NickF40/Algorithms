@@ -8,6 +8,6 @@ Meme stock exchange, based on neural network, skanning Reddit's subreddits looki
 - [ ] Website - frontend
 
 # By: 
-## - SBPU, 105'th group PM-PU
+`- SBPU, 105'th group PM-PU`
 
 
