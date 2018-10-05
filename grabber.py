@@ -1,12 +1,13 @@
-import grab
+import praw
 from configs import *
 
-import pdb
-pdb.set_trace()
+reddit = praw.Reddit(client_id=client['id'], client_secret=client['secret'], username=client['username'], password=client['password'], user_agent=client['agent'])
 
-g = grab.Grab()
-g.go(link)
+subbr = reddit.subreddit('memes')
 
-print(g.doc.select('//div[contains(@class, "rpBJOHq2PR60pnwJlUyP0 s17qbtaw-0 bxapWf")]').html())
+hot = subbr.hot(limit=10) 
+print("\n".join([str(sub.__dict__) for sub in hot]))
+
+# print('\n'.join([sub.title for sub in  subbr.hot(limit=2)]))
 
 
