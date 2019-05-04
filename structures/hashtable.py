@@ -152,6 +152,15 @@ class HashTable:
                 return val_
         return None
 
+    def remove(self, key):
+        llist = ctypes.cast(int(self.array[self.very_simple_hash(key)]), ctypes.py_object).value
+        for i, key_, val_ in enumerate(llist):
+            if key_ == key:
+                llist.remove(i)
+                return True
+        return None
+
+
 
 
 
